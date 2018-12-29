@@ -17,15 +17,13 @@
 	<title>Whatfettle &mdash; </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Paul Downey">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0;">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="canonical" href="https://whatfettle.com/">
+    <link rel="icon" href="//favicon-96x96.png" sizes="96x96" type="image/png" />
+    <link rel="icon" href="//favicon-32x32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="//favicon-16x16.png" sizes="16x16" type="image/png" />
+	<link rel="icon" href="//favicon.ico" type="image/x-icon">
 	<style>
-* {
-	margin: 0;
-	padding: 0;
-}
-
 body {
 	color: #333;
 	font-family: serif;
@@ -55,62 +53,28 @@ a:hover {
 	text-decoration: underline;
 }
 
+#gallery {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .item {
-	float: left;
-	border: none;
-	border-left: 8px solid white;
-	padding: 1em;
-	margin: 1em 5%;
-	width: 80%;
-	line-height: 1.25em;
+  flex-grow:1;
+  padding: 1em;
+} 
+
+.aside {
+    max-width: 15em;
+    line-height: 1.25em;
 }
 
 .item img {
-	border: none;
-	max-width: 100%;
-	margin-bottom: 1.5em;
+  display: block;
+  width: 16em;
+  object-fit: cover; 
 }
-
-.item i {
-	display: none;
-}
-
-
-.masonry,
-.masonry .masonry-brick {
-	-webkit-transition-duration: 0.7s;
-	-moz-transition-duration: 0.7s;
-	-o-transition-duration: 0.7s;
-	transition-duration: 0.7s;
-}
-
-.masonry {
-	-webkit-transition-property: height, width;
-	-moz-transition-property: height, width;
-	-o-transition-property: height, width;
-	transition-property: height, width;
-}
-
-.masonry .masonry-brick {
-	-webkit-transition-property: left, right, top;
-	-moz-transition-property: left, right, top;
-	-o-transition-property: left, right, top;
-	transition-property: left, right, top;
-}
-
-	</style>
-	<style media="all and (min-width: 38em)">
-
-	.item {
-		width: 15em;
-		margin: 2em;
-		padding: 2em;
-		border: 2px solid #eee;
-		-webkit-box-shadow: 1px 1px 5px #aaa;
-		-moz-box-shadow: 1px 1px 5px #aaa;
-		-o-box-shadow: 1px 1px 5px #aaa;
-		box-shadow: 1px 1px 5px #aaa;
-	}
+</style>
 
 	</style>
 </head>
@@ -528,23 +492,5 @@ a:hover {
 		</div>
 	</div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="jquery.masonry.min.js"></script>
-<script>
-	$(function () {
-		var $gallery = $('#gallery');
-		$gallery.imagesLoaded( function(){
-			$gallery.masonry({
-				itemSelector : '.item',
-				isFitWidth: true
-			});
-		});
-
-		$gallery.children('.item').each(function () {
-			var url = $(this).children('a:first').attr('href');
-			$(this).find('h3').wrapInner('<a href="' + url +'"></a>');
-		});
-	});
-</script>
 </body>
 </html>
